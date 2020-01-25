@@ -6,6 +6,8 @@ import com.liferon.graphqldemo.service.StudentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Component
 @RequiredArgsConstructor
 public class StudentQueryResolver implements GraphQLQueryResolver {
@@ -15,5 +17,10 @@ public class StudentQueryResolver implements GraphQLQueryResolver {
     public Student student(String name)
     {
         return studentService.getStudentDetailsByName(name);
+    }
+
+    public List<Student> students()
+    {
+        return studentService.getAllStudents();
     }
 }

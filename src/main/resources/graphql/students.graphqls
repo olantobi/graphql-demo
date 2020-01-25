@@ -25,9 +25,11 @@ type Student {
 }
 
 type Query {
-        student(name:String) : Student;
+        student(name:String) : Student
+
+        students : [Student]
 }
 
 type Mutation {
-        createStudent(input: StudentInput) : Student;
+        createStudent(input: StudentInput) : Student
 }
